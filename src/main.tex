@@ -1,0 +1,153 @@
+%!TEX TS-program = xelatex
+\documentclass[]{src/friggeri-cv}
+\usepackage{afterpage}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{progressbar}
+% remove link decorations: https://tex.stackexchange.com/questions/823/remove-ugly-borders-around-clickable-cross-references-and-hyperlinks
+\hypersetup{
+    pdftitle={Brian Paul Beatty},
+    pdfauthor={Brian Beatty},
+    pdfsubject={Brian Beatty - Resume},
+    pdfkeywords={resume,programming,java,c++,c,python,rust,devops,sysadmin,developer,software,aws,lambda,linux,kernel,ublue,os},
+    pdfborder=0 0 0,
+    colorlinks=false,       % no lik border color
+    allbordercolors=white    % white border color for all
+}
+\RequirePackage{xcolor}
+\definecolor{pblue}{HTML}{0395DE}
+
+\begin{document}
+\header{Brian}{ P. Beatty}
+    {}
+
+% Fake text to add separator      
+\fcolorbox{white}{gray}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+.....
+}}
+
+% In the aside, each new line forces a line break
+\begin{aside}
+  \section{Location}
+    Omaha, NE, USA
+    ~
+  \section{Github}
+    \href{https://github.com/bpbeatty}{https://github.com/bpbeatty}
+    ~
+  \section{Mail}
+    \href{mailto:brian@27megahertz.com}{\textbf{brian@}27megahertz.com}
+    ~
+  \section{Programming Languages}
+    \begin{tabular}{p{1.1cm} p{2.5cm}}
+      \progressbar[width=1.1cm,filledcolor=green]{1.0} & {BASH} \\
+      \progressbar[width=1.1cm,filledcolor=green]{0.8} & {C/C++} \\
+      \progressbar[width=1.1cm,filledcolor=green]{0.7} & {FORTRAN} \\
+      \progressbar[width=1.1cm,filledcolor=green]{0.9} & {Java} \\
+      \progressbar[width=1.1cm,filledcolor=green]{0.85} & {Python} \\
+    \end{tabular}
+    ~
+  \section{Personal Skills}
+    \begin{tabular}{p{1.2cm} p{2.0cm}}
+      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Ownership} \\
+      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Collaboration} \\
+      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Organization} \\
+    \end{tabular}
+    ~
+  \section{Projects}
+    \item[\rightarrow]\href{https://github.com/bpbeatty/bluefin}{bluefin}
+    \item[\rightarrow]\href{https://github.com/bpbeatty/fedora-coreos-proxmox}{fedora-coreos-proxmox}
+    \item[\rightarrow]\href{https://github.com/bpbeatty/resume}{resume}
+    \item[\rightarrow]\href{https://github.com/bpbeatty/startingpoint}{startingpoint}
+    ~
+  \section{Technologies}
+    \item[\rightarrow]{Ansible}
+    \item[\rightarrow]{Docker/Podman}
+    \item[\rightarrow]{GNURadio}
+    \item[\rightarrow]{libvirt/qemu/kvm}
+    \item[\rightarrow]{Linux}
+    ~
+\end{aside}
+
+\section{Experience}
+\begin{entrylist}
+  \entry
+    {December 2021 - Present}
+    {DARC}
+    {Northrop Grumman}
+    {\begin{itemize}
+        \item Coach Junior engineers and help onboard new team members.
+        \item Create tasks and architectural designs while leading Junior engineers on implementation.
+        \item Take the lead on technical decisions across the team's projects due to experience and highly technical background.
+        \item Code review and deliver feedback effectively to increase team productivity.
+        \item Implement technically involved parts of ongoing projects (authentication, database access, performance-related functionality).
+    \end{itemize}}
+  \entry
+    {January 2023 - Present}
+    {Edge Of Space}
+    {Northrop Grumman}
+    {\begin{itemize}
+        \item Designed/Implemented protocols for launch and recovery activities.
+        \item Trained interns and Junior engineers on launch and recovery activities.
+    \end{itemize}}
+  \entry
+    {January 2021 - December 2021}
+    {PFC-HF}
+    {Northrop Grumman}
+    {\begin{itemize}
+        \item Designed/Implemented 30W software defined radio capable of over the air transmissions, multiple waveforms implemented FM, SSB, BPSK.
+        \item Performed Ionospheric scientific study to characterize link reciprocity in HF NVIS communication systems for DARPA.
+        \item Obtained Amateur Radio License of Amateur Extra Class operator in support of project.
+    \end{itemize}}
+  \entry
+    {January 2021 - December 2021}
+    {Sagittarius Ground}
+    {Northrop Grumman}
+    {\begin{itemize}
+        \item Provided software capability utilizing Air Force weather models to aid in mission planning of ground to satellite communication system.
+        \item Designed/implemented REST service capable of calculating decibel loss for a ground terminal to satellite communication link utilizing ITU models and forecast weather data.
+    \end{itemize}}
+  \entry
+    {June 2021 - October 2021}
+    {Edge Of Space}
+    {Northrop Grumman}
+    {\begin{itemize}
+        \item Launched a high altitude balloon in support of geolocation of radio signals at the edge of space.
+        \item Lead software developer, customized open source software project to work with off the shelf parts in support of balloon beacon.
+        \item Developed ground based software defined radio geolocation system.
+    \end{itemize}}
+  \entry
+    {March 2019 - September 2020}
+    {AFWWEBS Project, SEMS III}
+    {Northrop Grumman}
+    {\begin{itemize}
+        \item Lead technical contributor for the AFWWEBS Di2E CI/CD Pipeline from initial concept, design, implementation, to validation.
+        \item The project took a single AFWWEBS repository, Weatherview, and implemented a CI/CD pipeline, from developer commit to artifact storage.
+        \item Enabled moving 30+ repositories from on prem hardware to Amazon gov cloud. Enabled developers to work remotely and deploy software on Air Force systems.
+        \item Lead technical contributor for the Skymap visualization project from initial concept, design, implementation, to validation.Lead technical contributor for the Skymap visualization project from initial concept, design, implementation, to validation.
+        \item The project took data received from SWAFS and visualized the data in a web browser.
+    \end{itemize}}
+  \entry
+    {October 2016 - March 2019}
+    {SWAFS Project, SEMS III}
+    {Northrop Grumman}
+    {\begin{itemize}
+        \item Lead technical contributor for the Skymap project from initial concept, design, implementation, to validation.
+        \item The project took an academic level software package (SKYMAP) and integrated it with existing SWAFS capabilities (SNFT).
+    \end{itemize}}
+\end{entrylist}
+
+\section{Education}
+\begin{entrylist}
+  \entry
+    {2020}
+    {Certified Secure Software Lifecycle Professional (CSSLP)}
+    {(ISC)\color{pblue}\(^2\)}
+    {Advanced technical skills and knowledge necessary for authentication, authorization and auditing throughout the SDLC using best practices, policies and procedures established by the cybersecurity experts at (ISC)\(^2\)}
+  \entry
+    {2014}
+    {Bachelors in Science Electronics Engineering}
+    {University of Nebraska Lincoln}
+    {Strong focus on hands-on experience with industry standard technologies.}
+\end{entrylist}
+\end{document}
