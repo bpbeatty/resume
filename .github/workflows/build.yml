@@ -1,0 +1,43 @@
+name: Build and push resume
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Checkout Push to Registry action
+        uses: actions/checkout@v3
+
+      - name: Build image/resume
+        id: build-image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          image: resume-writer
+          containerfiles: |
+            ./Containerfile
+
+      - name: Run image
+        run: |
+          podman create --name resume resume-writer:latest
+          podman cp resume:/output .
+
+      - name: Upload pdf
+        uses: actions/upload-artifact@v3
+        with:
+          name: bpbeatty-resume.pdf
+          path: output/resume.pdf
+
+      - name: Upload rpm
+        uses: actions/upload-artifact@v3
+        with:
+          name: bpbeatty-resume.noarch.rpm
+          path: output/bpbeatty-*.rpm
