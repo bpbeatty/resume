@@ -16,6 +16,7 @@ jobs:
       - name: Checkout Push to Registry action
         uses: actions/checkout@v3
       - name: Build image/resume
+        uses: redhat-actions/buildah-build@v2
         id: build-image
         with:
           containerfiles: |
