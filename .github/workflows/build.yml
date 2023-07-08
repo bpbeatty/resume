@@ -25,13 +25,14 @@ jobs:
             ./Containerfile
           image: resume-writer
 
-      - name: debug
-        shell: bash
-        run: |
-         ls -la
-
-      - name: Upload artifact
+      - name: Upload pdf
         uses: actions/upload-artifact@v3
         with:
           name: bpbeatty-resume.pdf
-          path: rpmbuild/BUILD/resume.pdf
+          path: resume.pdf
+
+      - name: Upload rpm
+        uses: actions/upload-artifact@v3
+        with:
+          name: bpbeatty-resume.noarch.rpm
+          path: bpbeatty-*.rpm

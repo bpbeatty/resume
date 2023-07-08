@@ -1,4 +1,4 @@
-FROM fedora:38
+FROM fedora:38 AS builder
 
 RUN dnf install -y \
     nodejs \
@@ -29,3 +29,7 @@ RUN ls /rpmbuild
 RUN rpmbuild -ba \
     --define '_topdir /rpmbuild' \
     /rpmbuild/SPECS/*.spec
+
+FROM scratch
+COPY --from=builder /rpmbuild/BUILD/resume.pdf /
+COPY --from=builder /rpmbuild/RPMS/noarch/bpbeatty-resume-*.rpm /
