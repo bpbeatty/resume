@@ -24,7 +24,7 @@ jobs:
           image: resume-writer
           containerfiles: |
             ./Containerfile
-          build-args: |
+          extra-args: |
             --output .
 
       - name: Upload pdf
