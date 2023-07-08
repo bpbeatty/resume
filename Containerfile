@@ -30,6 +30,9 @@ RUN rpmbuild -ba \
     --define '_topdir /rpmbuild' \
     /rpmbuild/SPECS/*.spec
 
-FROM scratch
-COPY --from=builder /rpmbuild/BUILD/resume.pdf /
-COPY --from=builder /rpmbuild/RPMS/noarch/bpbeatty-resume-*.rpm /
+RUN mkdir -p /output && \
+    cp /rpmbuild/BUILD/resume.pdf /rpmbuild/RPMS/noarch/bpbeatty-resume-*.rpm \
+        /output
+# FROM scratch
+# COPY --from=builder /rpmbuild/BUILD/resume.pdf /
+# COPY --from=builder /rpmbuild/RPMS/noarch/bpbeatty-resume-*.rpm /
