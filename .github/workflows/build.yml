@@ -21,9 +21,11 @@ jobs:
         id: build-image
         uses: redhat-actions/buildah-build@v2
         with:
+          image: resume-writer
           containerfiles: |
             ./Containerfile
-          image: resume-writer
+          build-args: |
+            --output=.
 
       - name: Upload pdf
         uses: actions/upload-artifact@v3
