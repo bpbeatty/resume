@@ -25,7 +25,7 @@ jobs:
           containerfiles: |
             ./Containerfile
           build-args: |
-            --output=.
+            --output .
 
       - name: Upload pdf
         uses: actions/upload-artifact@v3
