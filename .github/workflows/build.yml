@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Checkout Push to Registry action
         uses: actions/checkout@v3
+
       - name: Build image/resume
         id: build-image
         uses: redhat-actions/buildah-build@v2
@@ -23,6 +24,12 @@ jobs:
           containerfiles: |
             ./Containerfile
           image: resume-writer
+
+      - name: debug
+        shell: bash
+        run: |
+         ls -la
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:

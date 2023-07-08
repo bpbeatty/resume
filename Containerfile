@@ -21,7 +21,6 @@ RUN dnf install -y \
     python-setuptools
 
 RUN mkdir -p /rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
-WORKDIR /rpmbuild
 ADD . /rpmbuild/SOURCES
 ADD rpm/*.spec /rpmbuild/SPECS
 
