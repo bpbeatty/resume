@@ -1,0 +1,27 @@
+name: Build and push resume
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-resume:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Checkout Push to Registry action
+        uses: actions/checkout@v3
+      - name: Build image/resume
+        id: build-image
+        with:
+          containerfiles: |
+            ./Containerfile
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: bpbeatty-resume.pdf
+          path: /rpmbuild/BUILD/resume.pdf

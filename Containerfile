@@ -1,15 +1,32 @@
 FROM fedora:38
 
 RUN dnf install -y \
-    'dnf-command(config-manager)' \
-    'dnf-command(builddep)' \
+    nodejs \
+    /usr/bin/xelatex \
+    texlive-parskip \
+    lilypond-fonts-common \
+    texlive-textpos \
+    texlive-biblatex \
+    texlive-progressbar \
+    texlive-firstaid \
+    lato-fonts \
+    texlive-lato \
+    texlive-tex-gyre \
+    make \
     rpkg \
-    python-setuptools && \
-    dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo && \
-    dnf install gh -y
+    python-setuptools \
+    /usr/bin/rpmbuild \
+    aspell-en \
+    texlive-unicode-math \
+    python-setuptools
 
-COPY . /tmp/workdir
-WORKDIR /tmp/workdir
+RUN mkdir -p /rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+WORKDIR /rpmbuild
+ADD . /rpmbuild/SOURCES
+ADD rpm/*.spec /rpmbuild/SPECS
 
-RUN rpkg spec --spec ./rpm -p > /tmp/out.spec && \
-    dnf builddep -y /tmp/out.spec && rm /tmp/out.spec
+RUN ls /rpmbuild
+
+RUN rpmbuild -ba \
+    --define '_topdir /rpmbuild' \
+    /rpmbuild/SPECS/*.spec
