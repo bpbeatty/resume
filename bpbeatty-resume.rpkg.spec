@@ -1,5 +1,5 @@
 %define debug_package %{nil}
-Name:       bpbeatty-{{{ git_dir_name }}}
+Name:       bpbeatty-resume
 Version:    {{{ git_dir_version }}}
 Release:    1%{?dist}
 Summary:    This is my resume.
@@ -35,13 +35,13 @@ This is a test package.
 
 %build
 make \
-	-C %{_sourcedir}/{{{ git_dir_name }}} \
-	-f %{_sourcedir}/{{{ git_dir_name }}}/Makefile \
+	-C %{_sourcedir}/resume \
+	-f %{_sourcedir}/resume/Makefile \
 	BUILD=%{_builddir} BIN=%{_builddir}
 
 %install
 make \
-	-C %{_sourcedir}/{{{ git_dir_name }}} \
+	-C %{_sourcedir}/resume \
 	install \
 	DESTDIR=%{buildroot} BUILD=%{_builddir} BIN=%{_builddir}
 
