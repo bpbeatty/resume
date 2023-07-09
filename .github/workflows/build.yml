@@ -143,18 +143,18 @@ jobs:
       credentials:
         username: ${{ github.actor }}
         password: ${{ github.token }}
-      steps:
-        - name: Checkout out
-          uses: actions/checkout@v2
+    steps:
+      - name: Checkout out
+        uses: actions/checkout@v2
 
-        - name: Make PDF
-          run: make
+      - name: Make PDF
+        run: make
 
-        - name: Upload PDF
-          uses: actions/upload-artifact@v2
-          with:
-            name: bpbeatty-resume
-            path: ./bin/resume.pdf
+      - name: Upload PDF
+        uses: actions/upload-artifact@v2
+        with:
+          name: bpbeatty-resume
+          path: ./bin/resume.pdf
 
   build_rpm:
     name: Build RPM
@@ -164,15 +164,15 @@ jobs:
       credentials:
         username: ${{ github.actor }}
         password: ${{ github.token }}
-      steps:
-        - name: Checkout out
-          uses: actions/checkout@v2
+    steps:
+      - name: Checkout out
+        uses: actions/checkout@v2
 
-        - name: Make RPM
-          run: make rpm
+      - name: Make RPM
+        run: make rpm
 
-        - name: Upload RPM
-          uses: actions/upload-artifact@v2
-          with:
-            name: bpbeatty-resume-rpm
-            path: ./bin
+      - name: Upload RPM
+        uses: actions/upload-artifact@v2
+        with:
+          name: bpbeatty-resume-rpm
+          path: ./bin
