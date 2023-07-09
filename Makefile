@@ -28,7 +28,8 @@ install: $(BIN)/resume.pdf
 
 rpm:
 	mkdir -p $(BUILD) $(BIN)
-	+rpkg local --spec bpbeatty-resume.rpkg.spec --outdir $(ROOT_DIR)/$(BUILD)
+	ls -la
+	rpkg local --spec bpbeatty-resume.rpkg.spec --outdir $(ROOT_DIR)/$(BUILD)
 	cp $(BUILD)/noarch/*.rpm $(BIN)
 
 clean:
