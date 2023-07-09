@@ -1,12 +1,14 @@
 %define debug_package %{nil}
-Name:       bpbeatty-resume
-Version:    0.01
+Name:       bpbeatty-{{{ git_dir_name }}}
+Version:    {{{ git_dir_version }}}
 Release:    1%{?dist}
 Summary:    This is my resume.
 
 License:    GPLv3+
 URL:        https://resume.bpbeatty.xyz
-Source: .
+VCS:        {{{ git_dir_vcs }}}
+
+Source: 		{{{ git_dir_pack }}}
 
 BuildArch:  noarch
 BuildRequires: aspell-en
@@ -28,18 +30,24 @@ BuildRequires: /usr/bin/xelatex
 This is a test package.
 
 %prep
+{{{ git_dir_setup_macro }}}
 %setup -q -c -T
 
 %build
-make -C %{_sourcedir} -f %{_sourcedir}/Makefile BUILD=%{_builddir} BIN=%{_builddir}
+make \
+	-C %{_sourcedir}/{{{ git_dir_name }}} \
+	-f %{_sourcedir}/{{{ git_dir_name }}}/Makefile \
+	BUILD=%{_builddir} BIN=%{_builddir}
 
 %install
-make -C %{_sourcedir} install DESTDIR=%{buildroot} BUILD=%{_builddir} BIN=%{_builddir}
+make \
+	-C %{_sourcedir}/{{{ git_dir_name }}} \
+	install \
+	DESTDIR=%{buildroot} BUILD=%{_builddir} BIN=%{_builddir}
 
 %files
 %{_bindir}/bpbeatty-resume
 %{_datadir}/bpbeatty/resume.pdf
 
 %changelog
-* Tue Jul 4 2023 Brian Beatty <27@megahertz.com> - 0.01
-- Initial packaging
+{{{ git_dir_changelog }}}
