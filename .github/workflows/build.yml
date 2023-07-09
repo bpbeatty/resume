@@ -168,7 +168,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ github.token }}
     steps:
-      - name: Checkout out
+      - name: Checkout repo
         uses: actions/checkout@v2
 
       - name: Make RPM

@@ -8,7 +8,7 @@ License:    GPLv3+
 URL:        https://resume.bpbeatty.xyz
 VCS:        {{{ git_dir_vcs }}}
 
-Source: 		{{{ git_dir_pack }}}
+Source: {{{ git_archive path="." }}}
 
 BuildArch:  noarch
 BuildRequires: aspell-en
