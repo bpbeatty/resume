@@ -169,7 +169,15 @@ jobs:
         password: ${{ github.token }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: debug
+        id: debug
+        shell: bash
+        run: |
+          # Generate a timestamp for creating an image version history
+          pwd
+          ls -la
 
       - name: Make RPM
         run: make rpm

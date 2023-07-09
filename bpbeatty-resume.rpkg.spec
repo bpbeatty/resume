@@ -1,14 +1,14 @@
 %define debug_package %{nil}
-Name:       bpbeatty-resume
+Name:       bpbeatty-{{{ git_dir_name }}}
 Version:    {{{ git_dir_version }}}
 Release:    1%{?dist}
-Summary:    This is my resume.
+Summary:    This is my {{{ git_dir_name }}}.
 
 License:    GPLv3+
-URL:        https://resume.bpbeatty.xyz
+URL:        https://{{{ git_dir_name }}}.bpbeatty.xyz
 VCS:        {{{ git_dir_vcs }}}
 
-Source: {{{ git_archive path="." }}}
+Source: {{{ git_dir_pack }}}
 
 BuildArch:  noarch
 BuildRequires: aspell-en
@@ -35,19 +35,19 @@ This is a test package.
 
 %build
 make \
-	-C %{_sourcedir}/resume \
-	-f %{_sourcedir}/resume/Makefile \
+	-C %{_sourcedir}/{{{ git_dir_name }}} \
+	-f %{_sourcedir}/{{{ git_dir_name }}}/Makefile \
 	BUILD=%{_builddir} BIN=%{_builddir}
 
 %install
 make \
-	-C %{_sourcedir}/resume \
+	-C %{_sourcedir}/{{{ git_dir_name }}} \
 	install \
 	DESTDIR=%{buildroot} BUILD=%{_builddir} BIN=%{_builddir}
 
 %files
-%{_bindir}/bpbeatty-resume
-%{_datadir}/bpbeatty/resume.pdf
+%{_bindir}/bpbeatty-{{{ git_dir_name }}}
+%{_datadir}/bpbeatty/{{{ git_dir_name }}}.pdf
 
 %changelog
 {{{ git_dir_changelog }}}
