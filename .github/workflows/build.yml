@@ -138,7 +138,7 @@ jobs:
   build_pdf:
     name: Build PDF
     runs-on: ubuntu-22.04
-    needs: build_image
+    needs: build-image
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
       credentials:
@@ -160,7 +160,7 @@ jobs:
   build_rpm:
     name: Build RPM
     runs-on: ubuntu-22.04
-    needs: build_image
+    needs: build-image
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
       credentials:
