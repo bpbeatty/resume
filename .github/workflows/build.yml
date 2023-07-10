@@ -177,7 +177,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          set-safe-directory: *
+          set-safe-directory: '*'
 
       - name: Make RPM
         run: make rpm
