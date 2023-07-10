@@ -139,6 +139,9 @@ jobs:
   build_pdf:
     name: Build PDF
     runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
     needs: build-image
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
@@ -161,6 +164,9 @@ jobs:
   build_rpm:
     name: Build RPM
     runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+      packages: write
     needs: build-image
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
@@ -170,8 +176,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Make RPM
         run: make rpm
