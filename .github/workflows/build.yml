@@ -176,6 +176,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
+      - name: Git add
         run: git config --system --add safe.directory .
 
       - name: Make RPM
