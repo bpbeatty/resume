@@ -4,13 +4,15 @@ on:
     branches:
       - master
   pull_request:
+    paths-ignore:
+      - '**.md'
   workflow_dispatch:
 env:
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 jobs:
   build-image:
-    name: Build image
+    name: Build and push image
     runs-on: ubuntu-22.04
     permissions:
       contents: read
@@ -37,6 +39,7 @@ jobs:
 
           # Have tags for tracking builds during pull request
           SHA_SHORT="${GITHUB_SHA::7}"
+          COMMIT_TAGS+=("pr-${{ github.event.number }}")
           COMMIT_TAGS+=("${SHA_SHORT}")
 
           BUILD_TAGS=("${TIMESTAMP}")
@@ -97,7 +100,7 @@ jobs:
       - name: Push To GHCR
         uses: redhat-actions/push-to-registry@v2
         id: push
-        #if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request'
         env:
           REGISTRY_USER: ${{ github.actor }}
           REGISTRY_PASSWORD: ${{ github.token }}
@@ -119,22 +122,22 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Sign container
-      # - uses: sigstore/cosign-installer@v3.0.5
-      #   if: github.event_name != 'pull_request'
+      - uses: sigstore/cosign-installer@v3.1.1
+        if: github.event_name != 'pull_request'
 
-      # - name: Sign container image
-      #   if: github.event_name != 'pull_request'
-      #   run: |
-      #     cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ steps.build_image.outputs.image }}@${TAGS}
-      #   env:
-      #     TAGS: ${{ steps.push.outputs.digest }}
-      #     COSIGN_EXPERIMENTAL: false
-      #     COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
+      - name: Sign container image
+        if: github.event_name != 'pull_request'
+        run: |
+          cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ steps.build_image.outputs.image }}@${TAGS}
+        env:
+          TAGS: ${{ steps.push.outputs.digest }}
+          COSIGN_EXPERIMENTAL: false
+          COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
 
-      # - name: Echo outputs
-      #   #if: github.event_name != 'pull_request'
-      #   run: |
-      #     echo "${{ toJSON(steps.push.outputs) }}"
+      - name: Echo outputs
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "${{ toJSON(steps.push.outputs) }}"
 
   build_pdf:
     name: Build PDF
