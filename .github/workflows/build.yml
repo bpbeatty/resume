@@ -171,15 +171,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
-          set-safe-directory: .
-
-      - name: debug
-        id: debug
-        shell: bash
-        run: |
-          # Generate a timestamp for creating an image version history
-          pwd
-          ls -la
+          fetch-depth: 0
 
       - name: Make RPM
         run: make rpm
