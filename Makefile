@@ -29,7 +29,7 @@ install: $(BIN)/resume.pdf
 rpm:
 	mkdir -p $(BUILD) $(BIN)
 	ls -la
-	echo $GIT_DIR
+	echo ${GIT_DIR}
 	git status
 	rpkg local --spec bpbeatty-resume.rpkg.spec --outdir $(ROOT_DIR)/$(BUILD)
 	cp $(BUILD)/noarch/*.rpm $(BIN)
