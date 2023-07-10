@@ -183,7 +183,7 @@ jobs:
           sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
           sudo dnf install gh -y
 
-      - name: Upload PDF
+      - name: Upload release PDF
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
@@ -227,7 +227,7 @@ jobs:
           sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
           sudo dnf install gh -y
 
-      - name: Upload PDF
+      - name: Upload release RPM
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
