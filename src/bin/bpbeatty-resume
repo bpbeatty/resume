@@ -1,3 +1,3 @@
 #!/bin/sh
 
-xdg-open ${INSTALL}/usr/share/bpbeatty/resume.pdf
+xdg-open /usr/share/bpbeatty/resume.pdf

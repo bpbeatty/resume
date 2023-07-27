@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 env:
     IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+    IMAGE_NAME: bpbeatty-resume
 
 jobs:
   build-image:
@@ -20,9 +21,6 @@ jobs:
       id-token: write
     strategy:
       fail-fast: false
-      matrix:
-        image_name:
-          - bpbeatty-resume
     steps:
       - name: Checkout Push to Registry action
         uses: actions/checkout@v3
@@ -69,11 +67,11 @@ jobs:
         id: meta
         with:
           images: |
-            ${{ matrix.image_name }}
+            ${{ env.IMAGE_NAME }}
           labels: |
             io.artifacthub.package.readme-url=https://raw.githubusercontent.com/bpbeatty/resume/master/README.md
             org.opencontainers.image.description=An image to build my resume
-            org.opencontainers.image.title=${{ matrix.image_name }}
+            org.opencontainers.image.title=${{ env.IMAGE_NAME }}
 
       # Build image using Buildah action
       - name: Build Image
@@ -82,7 +80,7 @@ jobs:
         with:
           containerfiles: |
             ./Containerfile
-          image: ${{ matrix.image_name }}
+          image: ${{ env.IMAGE_NAME }}
           tags: |
             ${{ steps.generate-tags.outputs.alias_tags }}
           labels: ${{ steps.meta.outputs.labels }}

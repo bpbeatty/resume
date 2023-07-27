@@ -46,8 +46,8 @@ make \
 	DESTDIR=%{buildroot} BUILD=%{_builddir} BIN=%{_builddir}
 
 %files
-%{_bindir}/bpbeatty-{{{ git_dir_name }}}
-%{_datadir}/bpbeatty/{{{ git_dir_name }}}.pdf
+%attr(0755,root,root) %{_bindir}/bpbeatty-{{{ git_dir_name }}}
+%attr(0644,root,root) %{_datadir}/bpbeatty/{{{ git_dir_name }}}.pdf
 
 %changelog
 {{{ git_dir_changelog }}}
