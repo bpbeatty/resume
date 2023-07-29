@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/bpbeatty/resume/compare/v1.1.1...v1.1.2) (2023-07-29)
+
+
+### Bug Fixes
+
+* adds need release-please ([18ea411](https://github.com/bpbeatty/resume/commit/18ea41115e2f45414f183e2f826bf0a87e0e01c1))
+
 ## [1.1.1](https://github.com/bpbeatty/resume/compare/v1.1.0...v1.1.1) (2023-07-29)
 
 
