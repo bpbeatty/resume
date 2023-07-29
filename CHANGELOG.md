@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/bpbeatty/resume/compare/v1.1.0...v1.1.1) (2023-07-29)
+
+
+### Bug Fixes
+
+* add registry ([93630b6](https://github.com/bpbeatty/resume/commit/93630b6b946aaa6a677f1ce51fc63054bab9171b))
+
 ## [1.1.0](https://github.com/bpbeatty/resume/compare/v1.0.0...v1.1.0) (2023-07-29)
 
 
