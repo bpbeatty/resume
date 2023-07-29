@@ -7,6 +7,9 @@ permissions:
   contents: write
   pull-requests: write
 
+env:
+    IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
+
 name: Release Please
 jobs:
   release-please:
