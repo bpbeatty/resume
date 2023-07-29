@@ -69,9 +69,9 @@ jobs:
           images: |
             ${{ env.IMAGE_NAME }}
           labels: |
-            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/bpbeatty/resume/master/README.md
-            org.opencontainers.image.description=An image to build my resume
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
+            org.opencontainers.image.description=An image to build my resume
+            io.artifacthub.package.readme-url=https://raw.githubusercontent.com/bpbeatty/resume/master/README.md
 
       # Build image using Buildah action
       - name: Build Image
