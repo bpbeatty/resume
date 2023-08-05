@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.7](https://github.com/bpbeatty/resume/compare/v1.1.6...v1.1.7) (2023-08-05)
+
+
+### Bug Fixes
+
+* more permissions ([d432810](https://github.com/bpbeatty/resume/commit/d4328101321f017b4e5cb6a59c5e5d5c76b3e1a1))
+
 ## [1.1.6](https://github.com/bpbeatty/resume/compare/v1.1.5...v1.1.6) (2023-08-05)
 
 
