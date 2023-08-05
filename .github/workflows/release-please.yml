@@ -32,7 +32,7 @@ jobs:
     needs: release-please
     if: needs.release-please.outputs.releases_created
     permissions:
-      contents: read
+      contents: write
       packages: write
       id-token: write
     strategy:
@@ -160,7 +160,7 @@ jobs:
     name: Build PDF
     runs-on: ubuntu-22.04
     permissions:
-      contents: read
+      contents: write
       packages: write
     needs: [build-image, release-please]
     container:
@@ -202,7 +202,7 @@ jobs:
     name: Build RPM
     runs-on: ubuntu-22.04
     permissions:
-      contents: read
+      contents: write
       packages: write
     needs: [build-image, release-please]
     container:
