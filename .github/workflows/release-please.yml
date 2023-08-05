@@ -234,6 +234,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
+          pwd; ls -la
           gh release upload \
             ${{ needs.release-please.outputs.tag }} \
             ./bin \
