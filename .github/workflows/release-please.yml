@@ -190,6 +190,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
+          pwd; ls -la ./bin/
           gh release upload \
             ${{ needs.release-please.outputs.tag }} \
             ./bin/resume.pdf \
@@ -234,9 +235,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          pwd; ls -la
+          pwd; ls -la ./bin
           gh release upload \
             ${{ needs.release-please.outputs.tag }} \
-            ./bin \
+            ./bin/bpbeatty-resume-*.rpm \
             --repo ${{ github.repository_owner }}/${{ github.event.repository.name }} \
             --clobber
