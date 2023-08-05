@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: write
+  packages: write
   pull-requests: write
 
 env:
@@ -169,7 +170,7 @@ jobs:
         password: ${{ github.token }}
     steps:
       - name: Checkout out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Make PDF
         run: make
@@ -191,8 +192,11 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           pwd; ls -la ./bin/
-          gh release create ${{ needs.release-please.outputs.tag }} \
-            ./bin/resume.pdf
+          gh release upload \
+            ${{ needs.release-please.outputs.tag }} \
+            ./bin/resume.pdf \
+            --repo ${{ github.repository_owner }}/${{ github.event.repository.name }} \
+            --clobber
 
   build_rpm:
     name: Build RPM
@@ -233,5 +237,8 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           pwd; ls -la ./bin
-          gh release create ${{ needs.release-please.outputs.tag }} \
-            ./bin/bpbeatty-resume-*.rpm
+          gh release upload \
+            ${{ needs.release-please.outputs.tag }} \
+            ./bin/bpbeatty-resume-*.rpm \
+            --repo ${{ github.repository_owner }}/${{ github.event.repository.name }} \
+            --clobber
