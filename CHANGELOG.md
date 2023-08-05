@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/bpbeatty/resume/compare/v1.1.3...v1.1.4) (2023-08-05)
+
+
+### Bug Fixes
+
+* more debug ([6252613](https://github.com/bpbeatty/resume/commit/6252613a4084a94c4c2683e19dffeebe42579b5f))
+
 ## [1.1.3](https://github.com/bpbeatty/resume/compare/v1.1.2...v1.1.3) (2023-08-05)
 
 
