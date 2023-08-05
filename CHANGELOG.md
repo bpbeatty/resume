@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/bpbeatty/resume/compare/v1.1.4...v1.1.5) (2023-08-05)
+
+
+### Bug Fixes
+
+* add gh release create ([f8897a3](https://github.com/bpbeatty/resume/commit/f8897a3531519ee50666c73ec4434173966e556e))
+
 ## [1.1.4](https://github.com/bpbeatty/resume/compare/v1.1.3...v1.1.4) (2023-08-05)
 
 
