@@ -1,0 +1,5 @@
+#!/bin/bash
+
+function get_latest_tag {
+    output $(git describe --abbrev=0)
+}
