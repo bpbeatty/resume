@@ -1,4 +1,4 @@
-FROM fedora:38 AS builder
+FROM fedora:38
 
 RUN dnf install -y \
   'dnf-command(builddep)' \

@@ -18,6 +18,7 @@ $(BIN)/resume.pdf: $(BUILD)/main.pdf
 
 $(BUILD)/main.pdf: src/main.tex
 	mkdir -p $(BUILD)
+	xelatex --output-directory=$(BUILD) -no-pdf $< > /dev/null && \
 	xelatex --output-directory=$(BUILD) $< > /dev/null
 
 install: $(BIN)/resume.pdf
