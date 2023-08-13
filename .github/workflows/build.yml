@@ -27,6 +27,9 @@ jobs:
       - name: Checkout Push to Registry action
         uses: actions/checkout@v3
 
+      - name: Git add
+        run: git config --system --add safe.directory /__w/resume/resume
+
       - name: Generate tags
         id: generate-tags
         shell: bash
