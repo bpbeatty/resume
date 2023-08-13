@@ -4,13 +4,14 @@
 \usepackage{hyperref}
 \usepackage{color}
 \usepackage{xcolor}
+\usepackage{parskip}
 \usepackage{progressbar}
 % remove link decorations: https://tex.stackexchange.com/questions/823/remove-ugly-borders-around-clickable-cross-references-and-hyperlinks
 \hypersetup{
     pdftitle={Brian Paul Beatty},
     pdfauthor={Brian Beatty},
     pdfsubject={Brian Beatty - Resume},
-    pdfkeywords={resume,programming,java,c++,c,python,rust,devops,sysadmin,developer,software,aws,lambda,linux,kernel,ublue,os},
+    pdfkeywords={aws,c++,c,camunda,developer,devops,docker,java,kafka,linux,os,podman,programming,python,resume,software,sysadmin,ublue},
     pdfborder=0 0 0,
     colorlinks=false,       % no lik border color
     allbordercolors=white    % white border color for all
@@ -40,18 +41,26 @@
     ~
   \section{Programming Languages}
     \begin{tabular}{p{1.1cm} p{2.5cm}}
-      \progressbar[width=1.1cm,filledcolor=green]{1.0} & {BASH} \\
-      \progressbar[width=1.1cm,filledcolor=green]{0.8} & {C/C++} \\
-      \progressbar[width=1.1cm,filledcolor=green]{0.7} & {FORTRAN} \\
-      \progressbar[width=1.1cm,filledcolor=green]{0.9} & {Java} \\
-      \progressbar[width=1.1cm,filledcolor=green]{0.85} & {Python} \\
+      \progressbar[width=1.1cm,filledcolor=green]{1.0} & {BASH}
+
+      \progressbar[width=1.1cm,filledcolor=green]{0.8} & {C/C++}
+
+      \progressbar[width=1.1cm,filledcolor=green]{0.7} & {FORTRAN}
+
+      \progressbar[width=1.1cm,filledcolor=green]{0.9} & {Java}
+
+      \progressbar[width=1.1cm,filledcolor=green]{0.85} & {Python}
+
     \end{tabular}
     ~
   \section{Personal Skills}
     \begin{tabular}{p{1.2cm} p{2.0cm}}
-      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Ownership} \\
-      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Collaboration} \\
-      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Organization} \\
+      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Ownership}
+
+      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Collaboration}
+
+      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Organization}
+
     \end{tabular}
     ~
   \section{Projects}
@@ -68,6 +77,20 @@
     \item[\rightarrow]{Linux}
     ~
 \end{aside}
+
+\section{Education}
+\begin{entrylist}
+  \entry
+    {2020}
+    {Certified Secure Software Lifecycle Professional (CSSLP)}
+    {(ISC)\color{pblue}\(^2\)}
+    {Advanced technical skills and knowledge necessary for authentication, authorization and auditing throughout the SDLC using best practices, policies and procedures established by the cybersecurity experts at (ISC)\(^2\)}
+  \entry
+    {2014}
+    {Bachelors in Science Electronics Engineering}
+    {University of Nebraska Lincoln}
+    {Strong focus on hands-on experience with industry standard technologies.}
+\end{entrylist}
 
 \section{Experience}
 \begin{entrylist}
@@ -135,19 +158,5 @@
         \item Lead technical contributor for the Skymap project from initial concept, design, implementation, to validation.
         \item The project took an academic level software package (SKYMAP) and integrated it with existing SWAFS capabilities (SNFT).
     \end{itemize}}
-\end{entrylist}
-
-\section{Education}
-\begin{entrylist}
-  \entry
-    {2020}
-    {Certified Secure Software Lifecycle Professional (CSSLP)}
-    {(ISC)\color{pblue}\(^2\)}
-    {Advanced technical skills and knowledge necessary for authentication, authorization and auditing throughout the SDLC using best practices, policies and procedures established by the cybersecurity experts at (ISC)\(^2\)}
-  \entry
-    {2014}
-    {Bachelors in Science Electronics Engineering}
-    {University of Nebraska Lincoln}
-    {Strong focus on hands-on experience with industry standard technologies.}
 \end{entrylist}
 \end{document}
