@@ -6,6 +6,8 @@ RUN dnf install -y \
 
 ADD . /tmp
 
+RUN git describe --abbrev=0
+
 RUN \
   cd /tmp && \
   rpkg spec --spec /tmp/ -p > /tmp/out.spec && \
