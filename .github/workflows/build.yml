@@ -75,9 +75,6 @@ jobs:
             org.opencontainers.image.description=An image to build my resume
             org.opencontainers.image.title=${{ matrix.image_name }}
 
-      - name: Git add
-        run: git status; git tag; git describe --abbrev=0
-
       # Build image using Buildah action
       - name: Build Image
         id: build_image
