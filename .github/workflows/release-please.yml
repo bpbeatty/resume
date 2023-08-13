@@ -5,7 +5,11 @@ on:
 
 permissions:
   contents: write
+  packages: write
   pull-requests: write
+
+env:
+    IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 name: Release Please
 jobs:
@@ -28,7 +32,7 @@ jobs:
     needs: release-please
     if: needs.release-please.outputs.releases_created
     permissions:
-      contents: read
+      contents: write
       packages: write
       id-token: write
     strategy:
@@ -156,9 +160,9 @@ jobs:
     name: Build PDF
     runs-on: ubuntu-22.04
     permissions:
-      contents: read
+      contents: write
       packages: write
-    needs: build-image
+    needs: [build-image, release-please]
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
       credentials:
@@ -166,7 +170,7 @@ jobs:
         password: ${{ github.token }}
     steps:
       - name: Checkout out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Make PDF
         run: make
@@ -197,9 +201,9 @@ jobs:
     name: Build RPM
     runs-on: ubuntu-22.04
     permissions:
-      contents: read
+      contents: write
       packages: write
-    needs: build-image
+    needs: [build-image, release-please]
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
       credentials:
@@ -233,6 +237,6 @@ jobs:
         run: |
           gh release upload \
             ${{ needs.release-please.outputs.tag }} \
-            ./bin \
+            ./bin/bpbeatty-resume-*.rpm \
             --repo ${{ github.repository_owner }}/${{ github.event.repository.name }} \
             --clobber
