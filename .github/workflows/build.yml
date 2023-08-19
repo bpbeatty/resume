@@ -153,13 +153,13 @@ jobs:
         password: ${{ github.token }}
     steps:
       - name: Checkout out
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Make PDF
         run: make
 
       - name: Upload PDF
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: bpbeatty-resume
           path: ./bin/resume.pdf
@@ -187,7 +187,7 @@ jobs:
         run: make rpm
 
       - name: Upload RPM
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: bpbeatty-resume-rpm
           path: ./bin
