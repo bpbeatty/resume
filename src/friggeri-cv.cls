@@ -178,7 +178,8 @@
   \item[#1]
     {\addfontfeature{Color=pblue}|} {\boldfont{#2}}%
     \hfill%
-    {\textit{\addfontfeature{Color=pblue}#3}}\\%
+    {\textit{\addfontfeature{Color=pblue}#3}}%
+
     #4\vspace{\parsep}%
   }
 
