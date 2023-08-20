@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.2](https://github.com/bpbeatty/resume/compare/v0.0.1...v0.0.2) (2023-08-20)
+
+
+### Features
+
+* less acronyms ([#21](https://github.com/bpbeatty/resume/issues/21)) ([a663e86](https://github.com/bpbeatty/resume/commit/a663e86daed98d6d8af0147c01cc422f2109f682))
+
+
+### Miscellaneous Chores
+
+* release 0.0.2 ([59e6043](https://github.com/bpbeatty/resume/commit/59e60438e071d30a98262d34c3c118ae97b14f1a))
+
 ## 0.0.1 (2023-08-13)
 
 
@@ -17,5 +29,3 @@
 ### Miscellaneous Chores
 
 * release 0.0.1 ([889cfb4](https://github.com/bpbeatty/resume/commit/889cfb41962a0c0e664909a6bf232c1a4fe81cc8))
-
-
