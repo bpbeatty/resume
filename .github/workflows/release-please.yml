@@ -42,7 +42,7 @@ jobs:
           - bpbeatty-resume
     steps:
       - name: Checkout Push to Registry action
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Generate tags
         id: generate-tags
@@ -170,7 +170,7 @@ jobs:
         password: ${{ github.token }}
     steps:
       - name: Checkout out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Make PDF
         run: make
@@ -211,7 +211,7 @@ jobs:
         password: ${{ github.token }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Git add
         run: git config --system --add safe.directory /__w/resume/resume
