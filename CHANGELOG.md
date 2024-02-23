@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.3](https://github.com/bpbeatty/resume/compare/v0.0.2...v0.0.3) (2024-02-23)
+
+
+### Features
+
+* adds chasing the ionosphere article ([#35](https://github.com/bpbeatty/resume/issues/35)) ([5761ed9](https://github.com/bpbeatty/resume/commit/5761ed9b4d4ac2820b2a6c14dabf9d7b69666b35))
+
+
+### Miscellaneous Chores
+
+* release 0.1.0 ([b8462d6](https://github.com/bpbeatty/resume/commit/b8462d6833f66c5b3fa470aae8e3f0cafd6d2c19))
+
 ## [0.0.2](https://github.com/bpbeatty/resume/compare/v0.0.1...v0.0.2) (2023-08-20)
 
 
