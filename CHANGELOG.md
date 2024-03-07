@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/bpbeatty/resume/compare/v0.0.3...v0.1.0) (2024-03-07)
+
+
+### Features
+
+* bump container version ([#37](https://github.com/bpbeatty/resume/issues/37)) ([5d73a35](https://github.com/bpbeatty/resume/commit/5d73a357c4bc8495f77280b119ebe625e3d11f1c))
+
 ## [0.0.3](https://github.com/bpbeatty/resume/compare/v0.0.2...v0.0.3) (2024-02-23)
 
 
