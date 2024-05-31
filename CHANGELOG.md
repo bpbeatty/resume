@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://github.com/bpbeatty/resume/compare/v0.0.3...v0.1.0) (2024-03-07)
+## [0.0.4](https://github.com/bpbeatty/resume/compare/v0.0.3...v0.0.4) (2024-03-07)
 
 
 ### Features
