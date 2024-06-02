@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 Name:       bpbeatty-{{{ git_dir_name }}}
-Version:    0.0.4
+Version:    0.0.5
 Release:    1%{?dist}
 Summary:    This is my {{{ git_dir_name }}}.
 
