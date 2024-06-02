@@ -163,6 +163,7 @@ jobs:
       contents: write
       packages: write
     needs: [build-image, release-please]
+    if: github.event.pull_request.merged == true
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
       credentials:
@@ -204,6 +205,7 @@ jobs:
       contents: write
       packages: write
     needs: [build-image, release-please]
+    if: github.event.pull_request.merged == true
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
       credentials:
