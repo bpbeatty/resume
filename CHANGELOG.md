@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.0.5](https://github.com/bpbeatty/resume/compare/v0.0.4...v0.0.5) (2024-06-02)
+
+
+### Features
+
+* bump container version ([a4257a5b](https://github.com/bpbeatty/resume/commit/a4257a5b967bffef8f210c8342aced5ae6e6c01d))
+
+
+### Miscellaneous Chores
+
+* release 0.0.1 ([889cfb4](https://github.com/bpbeatty/resume/commit/889cfb41962a0c0e664909a6bf232c1a4fe81cc8))
+* release 0.0.2 ([59e6043](https://github.com/bpbeatty/resume/commit/59e60438e071d30a98262d34c3c118ae97b14f1a))
+* release 0.0.3 ([b8462d6](https://github.com/bpbeatty/resume/commit/b8462d6833f66c5b3fa470aae8e3f0cafd6d2c19))
+* release 0.0.4 ([e43e768](https://github.com/bpbeatty/resume/commit/e43e76855db2a0a1131a4c2e660246ac25f4baaf))
+
 ## [0.0.4](https://github.com/bpbeatty/resume/compare/v0.0.3...v0.0.4) (2024-03-07)
 
 
