@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.0](https://github.com/bpbeatty/resume/compare/v0.0.3...v0.1.0) (2024-03-07)
+## [0.0.4](https://github.com/bpbeatty/resume/compare/v0.0.3...v0.0.4) (2024-03-07)
 
 
 ### Features
@@ -17,7 +17,7 @@
 
 ### Miscellaneous Chores
 
-* release 0.1.0 ([b8462d6](https://github.com/bpbeatty/resume/commit/b8462d6833f66c5b3fa470aae8e3f0cafd6d2c19))
+* release 0.0.3 ([b8462d6](https://github.com/bpbeatty/resume/commit/b8462d6833f66c5b3fa470aae8e3f0cafd6d2c19))
 
 ## [0.0.2](https://github.com/bpbeatty/resume/compare/v0.0.1...v0.0.2) (2023-08-20)
 

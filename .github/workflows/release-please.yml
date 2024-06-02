@@ -1,7 +1,7 @@
 on:
-  push:
-    branches:
-      - master
+  pull_requests:
+    types:
+      - closed
 
 permissions:
   contents: write
@@ -30,7 +30,7 @@ jobs:
     name: Build and push image
     runs-on: ubuntu-22.04
     needs: release-please
-    if: needs.release-please.outputs.releases_created
+    if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
     permissions:
       contents: write
       packages: write
@@ -163,6 +163,7 @@ jobs:
       contents: write
       packages: write
     needs: [build-image, release-please]
+    if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
       credentials:
@@ -204,6 +205,7 @@ jobs:
       contents: write
       packages: write
     needs: [build-image, release-please]
+    if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
     container:
       image: ghcr.io/bpbeatty/bpbeatty-resume:latest
       credentials:
