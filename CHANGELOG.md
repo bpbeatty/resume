@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/bpbeatty/resume/compare/v0.0.5...v0.1.0) (2025-10-03)
+
+
+### Features
+
+* updates for 2025 ([#60](https://github.com/bpbeatty/resume/issues/60)) ([54d1cf1](https://github.com/bpbeatty/resume/commit/54d1cf1b7cc73f6278b93ef5c519226ca760fc27))
+
 ## [0.0.5](https://github.com/bpbeatty/resume/compare/v0.0.4...v0.0.5) (2024-06-02)
 
 
