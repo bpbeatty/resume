@@ -4,9 +4,6 @@ on:
   pull_request:
     branches:
       - master
-  push:
-    branches:
-      - master
     paths-ignore:
       - '**.md'
   workflow_dispatch:
@@ -17,12 +14,10 @@ env:
 jobs:
   build-image:
     name: Build and push image
-    runs-on: ubuntu-22.04
-
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
-      id-token: write
 
     strategy:
       fail-fast: false
@@ -30,7 +25,7 @@ jobs:
         image_name:
           - bpbeatty-resume
     steps:
-      - name: Checkout Push to Registry action
+      - name: Checkout
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Generate tags
@@ -149,7 +144,7 @@ jobs:
 
   build_pdf:
     name: Build PDF
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -160,42 +155,42 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ github.token }}
     steps:
-      - name: Checkout out
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Make PDF
         run: make
 
       - name: Upload PDF
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: bpbeatty-resume
           path: ./bin/resume.pdf
 
-  build_rpm:
-    name: Build RPM
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: read
-      packages: write
-    needs: build-image
-    container:
-      image: ghcr.io/bpbeatty/bpbeatty-resume:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ github.token }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+  # build_rpm:
+  #   name: Build RPM
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: read
+  #     packages: write
+  #   needs: build-image
+  #   container:
+  #     image: ghcr.io/bpbeatty/bpbeatty-resume:latest
+  #     credentials:
+  #       username: ${{ github.actor }}
+  #       password: ${{ github.token }}
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v4
 
-      - name: Git add
-        run: git config --system --add safe.directory /__w/resume/resume
+  #     - name: Git add
+  #       run: git config --system --add safe.directory /__w/resume/resume
 
-      - name: Make RPM
-        run: make rpm
+  #     - name: Make RPM
+  #       run: make rpm
 
-      - name: Upload RPM
-        uses: actions/upload-artifact@v4
-        with:
-          name: bpbeatty-resume-rpm
-          path: ./bin
+  #     - name: Upload RPM
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: bpbeatty-resume-rpm
+  #         path: ./bin
