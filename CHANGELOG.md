@@ -7,6 +7,7 @@
 
 * updates for 25 ([#62](https://github.com/bpbeatty/resume/issues/62)) ([4329632](https://github.com/bpbeatty/resume/commit/43296322cdd11ad31ed527f490188c41205a927e))
 
+
 ## [0.0.5](https://github.com/bpbeatty/resume/compare/v0.0.4...v0.0.5) (2024-06-02)
 
 
