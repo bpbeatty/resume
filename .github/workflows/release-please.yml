@@ -28,13 +28,12 @@ jobs:
 
   build-image:
     name: Build and push image
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs: release-please
     if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
     permissions:
       contents: write
       packages: write
-      id-token: write
     strategy:
       fail-fast: false
       matrix:
@@ -158,7 +157,7 @@ jobs:
 
   build_pdf:
     name: Build PDF
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       packages: write
@@ -198,47 +197,47 @@ jobs:
             --repo ${{ github.repository_owner }}/${{ github.event.repository.name }} \
             --clobber
 
-  build_rpm:
-    name: Build RPM
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-      packages: write
-    needs: [build-image, release-please]
-    if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
-    container:
-      image: ghcr.io/bpbeatty/bpbeatty-resume:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ github.token }}
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+  # build_rpm:
+  #   name: Build RPM
+  #   runs-on: ubuntu-22.04
+  #   permissions:
+  #     contents: write
+  #     packages: write
+  #   needs: [build-image, release-please]
+  #   if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
+  #   container:
+  #     image: ghcr.io/bpbeatty/bpbeatty-resume:latest
+  #     credentials:
+  #       username: ${{ github.actor }}
+  #       password: ${{ github.token }}
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v4
 
-      - name: Git add
-        run: git config --system --add safe.directory /__w/resume/resume
+  #     - name: Git add
+  #       run: git config --system --add safe.directory /__w/resume/resume
 
-      - name: Make RPM
-        run: make rpm
+  #     - name: Make RPM
+  #       run: make rpm
 
-      - name: Upload RPM
-        uses: actions/upload-artifact@v4
-        with:
-          name: bpbeatty-resume-rpm
-          path: ./bin
+  #     - name: Upload RPM
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: bpbeatty-resume-rpm
+  #         path: ./bin
 
-      - name: Install github CLI
-        run: |
-          sudo dnf install 'dnf-command(config-manager)' -y
-          sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-          sudo dnf install gh -y
+  #     - name: Install github CLI
+  #       run: |
+  #         sudo dnf install 'dnf-command(config-manager)' -y
+  #         sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+  #         sudo dnf install gh -y
 
-      - name: Upload release RPM
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          gh release upload \
-            ${{ needs.release-please.outputs.tag }} \
-            ./bin/bpbeatty-resume-*.rpm \
-            --repo ${{ github.repository_owner }}/${{ github.event.repository.name }} \
-            --clobber
+  #     - name: Upload release RPM
+  #       env:
+  #         GITHUB_TOKEN: ${{ github.token }}
+  #       run: |
+  #         gh release upload \
+  #           ${{ needs.release-please.outputs.tag }} \
+  #           ./bin/bpbeatty-resume-*.rpm \
+  #           --repo ${{ github.repository_owner }}/${{ github.event.repository.name }} \
+  #           --clobber
