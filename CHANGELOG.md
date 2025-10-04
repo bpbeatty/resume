@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/bpbeatty/resume/compare/v0.1.0...v0.1.1) (2025-10-03)
+
+
+### Bug Fixes
+
+* no gh cli ([#68](https://github.com/bpbeatty/resume/issues/68)) ([de60cff](https://github.com/bpbeatty/resume/commit/de60cff80f6e5c77f37c838e1f3d70522f678d9e))
+
 ## [0.1.0](https://github.com/bpbeatty/resume/compare/v0.0.5...v0.1.0) (2025-10-03)
 
 
