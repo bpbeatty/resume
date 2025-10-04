@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/bpbeatty/resume/compare/v0.1.1...v0.1.2) (2025-10-04)
+
+
+### Bug Fixes
+
+* dnf config-manager addrepo ([#70](https://github.com/bpbeatty/resume/issues/70)) ([701c651](https://github.com/bpbeatty/resume/commit/701c651dd3a7ba7d090122c7db9fff636ff384c4))
+
 ## [0.1.1](https://github.com/bpbeatty/resume/compare/v0.1.0...v0.1.1) (2025-10-03)
 
 
