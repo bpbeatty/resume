@@ -20,7 +20,7 @@ jobs:
       tag: ${{ steps.release-please.outputs.tag_name }}
       upload_url: ${{ steps.release-please.outputs.upload_url }}
     steps:
-      - uses: google-github-actions/release-please-action@v4
+      - uses: googleapis/release-please-action@v4
         id: release-please
         with:
           release-type: simple
@@ -170,22 +170,22 @@ jobs:
         password: ${{ github.token }}
     steps:
       - name: Checkout out
-        uses: actions/checkout@v4
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Make PDF
         run: make
 
       - name: Upload PDF
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: bpbeatty-resume
           path: ./bin/resume.pdf
 
-      # - name: Install github CLI
-      #   run: |
-      #     sudo dnf install 'dnf-command(config-manager)' -y
-      #     sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-      #     sudo dnf install gh -y
+      - name: Install github CLI
+        run: |
+          sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+          sudo dnf install gh -y
+        # sudo dnf install 'dnf-command(config-manager)' -y
 
       - name: Upload release PDF
         env:
