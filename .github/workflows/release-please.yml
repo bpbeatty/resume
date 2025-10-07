@@ -1,6 +1,11 @@
 ---
 name: Release Please
 on:
+  pull_request:
+    types:
+      - closed
+    paths-ignore:
+      - "**.md"
   workflow_dispatch:
 
 permissions:
@@ -187,6 +192,7 @@ jobs:
           sudo dnf install gh -y
 
       - name: Upload release PDF
+        if: github.event_name != 'pull_request'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
