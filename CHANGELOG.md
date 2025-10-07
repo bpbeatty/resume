@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/bpbeatty/resume/compare/v0.1.3...v0.1.4) (2025-10-07)
+
+
+### Bug Fixes
+
+* no workflow dispatch ([#77](https://github.com/bpbeatty/resume/issues/77)) ([a5357f1](https://github.com/bpbeatty/resume/commit/a5357f14ca0ab4bfbfd02fb1c8a8a6cc5a2d5531))
+
 ## [0.1.3](https://github.com/bpbeatty/resume/compare/v0.1.2...v0.1.3) (2025-10-07)
 
 
