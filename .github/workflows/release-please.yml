@@ -1,11 +1,7 @@
----
-name: Release Please
 on:
   pull_request:
     types:
       - closed
-    paths-ignore:
-      - "**.md"
 
 permissions:
   contents: write
