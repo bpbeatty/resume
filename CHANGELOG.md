@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/bpbeatty/resume/compare/v0.1.2...v0.1.3) (2025-10-07)
+
+
+### Bug Fixes
+
+* release on pr close ([#75](https://github.com/bpbeatty/resume/issues/75)) ([1fb0779](https://github.com/bpbeatty/resume/commit/1fb07797f2f836bb5248f83a7bbf17ef31ed6c73))
+
 ## [0.1.2](https://github.com/bpbeatty/resume/compare/v0.1.1...v0.1.2) (2025-10-04)
 
 
