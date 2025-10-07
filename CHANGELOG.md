@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/bpbeatty/resume/compare/v0.1.4...v0.1.5) (2025-10-07)
+
+
+### Bug Fixes
+
+* auto release-please ([#79](https://github.com/bpbeatty/resume/issues/79)) ([5bfe4bc](https://github.com/bpbeatty/resume/commit/5bfe4bc699a9a09ff4ff5cb5695b219c33c9a54b))
+
 ## [0.1.4](https://github.com/bpbeatty/resume/compare/v0.1.3...v0.1.4) (2025-10-07)
 
 
