@@ -1,11 +1,11 @@
 ---
 name: Release Please
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     branches:
       - master
+    paths-ignore:
+      - '**.md'
 
 permissions:
   contents: write
@@ -33,11 +33,12 @@ jobs:
   build-image:
     name: Build
     runs-on: ubuntu-24.04
+    needs: release-please
+    if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
     continue-on-error: false
     permissions:
       contents: write
       packages: write
-    needs: release-please
     strategy:
       fail-fast: false
       matrix:
@@ -143,10 +144,8 @@ jobs:
       # Sign container
       - name: Install Cosign
         uses: sigstore/cosign-installer@d7543c93d881b35a8faa02e8e3605f69b7a1ce62 # v3.10.0
-        if: github.event_name != 'pull_request'
 
       - name: Sign container image
-        if: github.event_name != 'pull_request'
         run: |
           cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ steps.build-image.outputs.image }}@${TAGS}
         env:
@@ -165,6 +164,7 @@ jobs:
       contents: write
       packages: write
     needs: [build-image, release-please]
+    if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
     container:
       image: ghcr.io/bpbeatty/resume-writer:${{ needs.build-image.outputs.tag }}
       credentials:
@@ -190,7 +190,7 @@ jobs:
           sudo dnf install gh -y
 
       - name: Upload release PDF
-        if: github.event_name != 'pull_request'
+        if:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
