@@ -190,7 +190,7 @@ jobs:
           sudo dnf install gh -y
 
       - name: Upload release PDF
-        if: needs.release-please.outputs.releases_created && github.event.pull_request.merged
+        if: github.event_name != 'pull_request'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
