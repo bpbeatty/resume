@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8](https://github.com/bpbeatty/resume/compare/v0.1.7...v0.1.8) (2025-10-10)
+
+
+### Bug Fixes
+
+* when to release ([#85](https://github.com/bpbeatty/resume/issues/85)) ([8045934](https://github.com/bpbeatty/resume/commit/8045934120ffc323e78bf41b25e0544105b26d08))
+
 ## [0.1.7](https://github.com/bpbeatty/resume/compare/v0.1.6...v0.1.7) (2025-10-10)
 
 
