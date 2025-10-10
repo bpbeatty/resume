@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.7](https://github.com/bpbeatty/resume/compare/v0.1.6...v0.1.7) (2025-10-10)
+
+
+### Bug Fixes
+
+* use built container ([#83](https://github.com/bpbeatty/resume/issues/83)) ([f95ba64](https://github.com/bpbeatty/resume/commit/f95ba64890853ffb4b4ba7a4d61f144ddbc6408e))
+
 ## [0.1.6](https://github.com/bpbeatty/resume/compare/v0.1.5...v0.1.6) (2025-10-07)
 
 
