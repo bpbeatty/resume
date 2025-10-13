@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.9](https://github.com/bpbeatty/resume/compare/v0.1.8...v0.1.9) (2025-10-13)
+
+
+### Bug Fixes
+
+* ordering ([#89](https://github.com/bpbeatty/resume/issues/89)) ([f65fe2a](https://github.com/bpbeatty/resume/commit/f65fe2a7506042f1944e1a4d38283087b466a255))
+
 ## [0.1.8](https://github.com/bpbeatty/resume/compare/v0.1.7...v0.1.8) (2025-10-13)
 
 
