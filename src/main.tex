@@ -6,24 +6,26 @@
 \usepackage{xcolor}
 \usepackage{parskip}
 \usepackage{progressbar}
-% remove link decorations: https://tex.stackexchange.com/questions/823/remove-ugly-borders-around-clickable-cross-references-and-hyperlinks
+\usepackage{changepage}
+
+% Remove link decorations: https://tex.stackexchange.com/questions/823/remove-ugly-borders-around-clickable-cross-references-and-hyperlinks
 \hypersetup{
     pdftitle={Brian Paul Beatty},
     pdfauthor={Brian Beatty},
     pdfsubject={Brian Beatty - Resume},
     pdfkeywords={aws,bpmn,c++,c,camunda,developer,devops,docker,git,java,jenkins,kafka,linux,os,podman,programming,python,resume,software,sysadmin,ublue},
     pdfborder=0 0 0,
-    colorlinks=false,       % no lik border color
-    allbordercolors=white    % white border color for all
+    colorlinks=false,
+    allbordercolors=white
 }
-\RequirePackage{xcolor}
+
 \definecolor{pblue}{HTML}{0395DE}
 
 \begin{document}
 \header{Brian}{ P. Beatty}
     {}
 
-% Fake text to add separator
+% Fake text block acting as a visual top divider separator
 \fcolorbox{white}{gray}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
 .....
 }}
@@ -37,39 +39,30 @@
     \href{mailto:brian@27megahertz.com}{\textbf{brian@}27megahertz.com}
     ~
   \section{Source}
-    \href{https://github.com/bpbeatty/resume}{github.com/bpbeatty/resume}
+    \href{https://github.com/bpbeatty/resume}{\textbf{github.com/bpbeatty/resume}} \quad
+    \textit{\small (Built via CI/CD Pipeline)}
     ~
-  \section{Programming Languages}
+  \section{Languages}
     \begin{tabular}{p{1.1cm} p{2.5cm}}
-      \progressbar[width=1.1cm,filledcolor=green]{1.0} & {BASH}
-
-      \progressbar[width=1.1cm,filledcolor=green]{0.75} & {C/C++}
-
+      \progressbar[width=1.1cm,filledcolor=green]{1.0} & {BASH} \\
+      \progressbar[width=1.1cm,filledcolor=green]{0.85} & {Python} \\
+      \progressbar[width=1.1cm,filledcolor=green]{0.9} & {Java} \\
+      \progressbar[width=1.1cm,filledcolor=green]{0.75} & {C/C++} \\
+      \progressbar[width=1.1cm,filledcolor=green]{0.7} & {MATLAB} \\
       \progressbar[width=1.1cm,filledcolor=green]{0.7} & {FORTRAN}
-
-      \progressbar[width=1.1cm,filledcolor=green]{0.9} & {Java}
-
-      \progressbar[width=1.1cm,filledcolor=green]{0.7} & {MATLAB}
-
-      \progressbar[width=1.1cm,filledcolor=green]{0.85} & {Python}
-
     \end{tabular}
     ~
   \section{Personal Skills}
     \begin{tabular}{p{1.2cm} p{2.0cm}}
-      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Ownership}
-
-      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Collaboration}
-
+      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Ownership} \\
+      \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Collaboration} \\
       \progressbar[width=1.1cm,filledcolor=blue]{1.0} & {Organization}
-
     \end{tabular}
     ~
   \section{Projects}
-    \item[\rightarrow]\href{https://github.com/bpbeatty/bos}{bos my personal OS build}
-    \item[\rightarrow]\href{https://www.northropgrumman.com/space/chasing-the-ionosphere}{Chasing the Ionosphere}
-    \item[\rightarrow]\href{https://github.com/bpbeatty/fedora-coreos-proxmox}{fedora-coreos-proxmox}
-    \item[\rightarrow]\href{https://github.com/bpbeatty/resume}{resume}
+    \item[\rightarrow]\href{https://github.com/bpbeatty/bos}{\textbf{bos:} Personal OS Build}
+    \item[\rightarrow]\href{https://www.northropgrumman.com/space/chasing-the-ionosphere}{\textbf{Chasing Ionosphere}}
+    \item[\rightarrow]\href{https://github.com/bpbeatty/fedora-coreos-proxmox}{\textbf{fedora-coreos-proxmox}}
     ~
   \section{Technologies}
     \item[\rightarrow]{Ansible}
@@ -84,51 +77,68 @@
 \begin{entrylist}
   \entry
     {2014}
-    {Bachelors in Science Electronics Engineering}
-    {University of Nebraska Lincoln}
-    {Strong focus with hands-on experience using industry standard technologies.}
+    {Bachelors of Science: Electronics Engineering}
+    {University of Nebraska--Lincoln}
+    {Strong focus on systems architecture, digital design, and hands-on laboratory application.}
 \end{entrylist}
 
 \section{Experience}
 \begin{entrylist}
   \entry
-    {Dec 2021 - Present}
+    {Jan 2026 - Present}
+    {Sentinel}
+    {Northrop Grumman}
+    {\begin{itemize}
+        \item Spearheading the establishment of modern development and engineering standards.
+        \item Driving security compliance initiatives and systematic technical debt remediation.
+        \item Optimizing infrastructure architectures and centralized code repositories for efficiency.
+        \item Providing targeted mentorship to junior team members to build core technical skillsets.
+    \end{itemize}}
+  \entry
+    {Dec 2021 - Dec 2025}
     {Deep-Space Advanced Radar Capability}
     {Northrop Grumman}
     {\begin{itemize}
-        \item Implement micro-service based architecture using Java Spring Boot framework.
-        \item Code review and deliver feedback effectively to increase team productivity.
-        \item Mentor Junior engineers and help onboard new team members.
-        \item Port algorithms written in MATLAB to Java for production use.
+        \item Implemented robust, microservice-based system architectures utilizing the Java Spring Boot framework.
+        \item Conducted detailed code reviews and delivered constructive feedback to maximize velocity.
+        \item Mentored junior engineers and created tailored onboarding paths to accelerate ramp-up times.
+        \item Ported complex mathematical algorithms from MATLAB to resilient Java for production systems.
     \end{itemize}}
   \entry
-    {2021, 2022, 2023}
+    {2021 - 2023}
     {Edge Of Space}
     {Northrop Grumman}
     {\begin{itemize}
-        \item Designed/Implemented protocols for launch and recovery activities.
-        \item Trained interns and Junior engineers on launch and recovery activities.
-        \item Launched a high altitude balloon in support of geolocation of radio signals at the edge of space.
-        \item Lead software developer, customized open source software project to work with off the shelf parts in support of balloon beacon.
-        \item Developed ground based software defined radio geolocation system.
-        \item Utilized MATLAB for post processing of IQ data.
+        \item Designed and implemented reliable protocols for precision launch and recovery operations.
+        \item Successfully launched high-altitude balloon payloads to support radio signal geolocation.
+        \item Served as Lead Software Developer, customizing open-source software to interface smoothly with COTS components for balloon beacons.
+        \item Developed a ground-based Software Defined Radio (SDR) system for real-time geolocation.
+        \item Utilized MATLAB for extensive post-processing analysis of raw IQ signal data.
     \end{itemize}}
+\end{entrylist}
+
+%% Force clean break to Page 2 %%
+\clearpage
+
+%% Start Page 2 with full left-to-right layout alignment %%
+\begin{adjustwidth}{-4.8cm}{0cm} 
+\begin{entrylist}
   \entry
     {Jan 2021 - Dec 2021}
     {Protected Forward Comms HF}
     {Northrop Grumman}
     {\begin{itemize}
-        \item Designed/Implemented 30W software defined radio capable of over the air transmissions, multiple waveforms implemented FM, SSB, BPSK.
-        \item Performed Ionospheric scientific study to characterize link reciprocity in HF NVIS communication systems for DARPA.
-        \item Obtained Amateur Radio License of Amateur Extra Class operator in support of project.
+        \item Designed and built a 30W Software Defined Radio capable of multiple Over-The-Air waveforms (FM, SSB, BPSK).
+        \item Performed scientific ionospheric studies to characterize link reciprocity in HF NVIS communication systems for DARPA.
+        \item Obtained Amateur Extra Class radio operator license in support of ongoing project requirements.
     \end{itemize}}
   \entry
     {Jan 2021 - Dec 2021}
     {Sagittarius Ground}
     {Northrop Grumman}
     {\begin{itemize}
-        \item Provided software capability utilizing Air Force weather models to aid in mission planning of ground to satellite communication system.
-        \item Designed/implemented REST service capable of calculating decibel loss for a ground terminal to satellite communication link utilizing ITU models and forecast weather data.
+        \item Built software capabilities leveraging Air Force weather models to assist mission planning for ground-to-satellite arrays.
+        \item Designed and developed a REST service calculating decibel loss for links utilizing ITU models and forecast weather data.
     \end{itemize}}
   \entry
     {Mar 2019 - Sep 2020}
@@ -146,8 +156,10 @@
     {SWAFS Project, SEMS III}
     {Northrop Grumman}
     {\begin{itemize}
-        \item Lead technical contributor for the Skymap project from initial concept, design, implementation, to validation.
-        \item The project took an academic level software package (SKYMAP) and integrated it with existing SWAFS capabilities (SNFT).
+        \item Served as Lead Technical Contributor for the Skymap project from concept design through validation phases.
+        \item Integrated academic-level software packages (SKYMAP) seamlessly with existing enterprise SWAFS capabilities (SNFT).
     \end{itemize}}
 \end{entrylist}
+\end{adjustwidth}
+
 \end{document}
