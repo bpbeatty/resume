@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/bpbeatty/resume/compare/v0.1.9...v0.2.0) (2026-07-02)
+
+
+### Features
+
+* resume refresh 202607 ([#98](https://github.com/bpbeatty/resume/issues/98)) ([84f27b1](https://github.com/bpbeatty/resume/commit/84f27b1959203cfc9e7fd2dc5129af62099c3dd6))
+
+
+### Bug Fixes
+
+* when to release ([#91](https://github.com/bpbeatty/resume/issues/91)) ([7eec87c](https://github.com/bpbeatty/resume/commit/7eec87c5acebaa45d05a8c99dcccec6dde218866))
+
 ## [0.1.9](https://github.com/bpbeatty/resume/compare/v0.1.8...v0.1.9) (2025-10-13)
 
 
